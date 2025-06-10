@@ -9,3 +9,5 @@ class Lista(ListView):
   template_name= 'empleado/lista.html'
   queryset=['Elias','Aiseman','Analista De Sistemas']
   context_object_name= 'lista'
+
+
