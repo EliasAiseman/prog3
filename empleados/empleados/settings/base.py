@@ -41,7 +41,7 @@ CKEDITOR_IMAGE_BACKEND = "pillow"
 
 CKEDITOR_5_CONFIGS = {
     'default': {
-        'language': 'es',  # Cambia al idioma que prefieras
+        'language': 'es', 
         'toolbar': [
             'heading',
             '|',
