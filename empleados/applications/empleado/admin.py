@@ -6,6 +6,8 @@ from django.template.loader import get_template
 from io import BytesIO
 from xhtml2pdf import pisa
 from applications.departamento.models import Departamento
+from django_ckeditor_5.widgets import CKEditor5Widget
+from django import forms
 
 # Register your models here.
 
@@ -13,6 +15,15 @@ admin.site.register(Empleado)
 admin.site.register(Trabajo)
 admin.site.register(Pais)
 
+
+
+class EmpleadoForm(forms.ModelForm):
+    class Meta:
+        model = Empleado
+        fields = '__all__'
+        widgets = {
+            'observaciones': CKEditor5Widget(config_name='default')
+        }
 
 def export_selected_employees_csv(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')

@@ -1,5 +1,8 @@
 from django.db import models
 from applications.departamento.models import Departamento
+from django_ckeditor_5.fields import CKEditor5Field
+
+
 
 class Trabajo(models.Model):
     nombre = models.CharField('Puesto de trabajo', max_length=100)
@@ -37,7 +40,8 @@ class Empleado(models.Model):
   
     trabajo = models.ForeignKey(Trabajo, on_delete=models.SET_NULL, null=True, blank=True)
     departamento = models.ForeignKey(Departamento, on_delete=models.SET_NULL, null=True, blank=True)
-  
+    observaciones = CKEditor5Field(config_name='default', blank = True)
+
 
     def nombre_completo(self):
         return f"{self.nombre} {self.apellidos}"

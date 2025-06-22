@@ -27,8 +27,9 @@ urlpatterns = [
    path('home/',include('applications.home.urls')),
    path('departamentos/',include('applications.departamento.urls')),
    path('empleados/',include('applications.empleado.urls')),
-   path('reporte/',include('applications.empleado.urls'))
-    
+   path('reporte/',include('applications.empleado.urls')),
+    path('ckeditor5/', include('django_ckeditor_5.urls')),
+
     
     
 ]
